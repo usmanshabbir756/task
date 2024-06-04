@@ -6,13 +6,14 @@ Route::get('/', function () {
     return "Hello";
 });
 
-Route::get("/hello", function () {
-
+Route::get("/abc", function () {
     return "Hello world";
-});
+})->name('hello');
+
 Route::get("/hallo", function () {
-    return redirect("/hello");
+    return redirect()->route("hello");
 });
+
 Route::get("/greet/{name}", function ($name) {
 
     return $name;
