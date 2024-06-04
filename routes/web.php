@@ -18,3 +18,8 @@ Route::get("/greet/{name}", function ($name) {
 
     return $name;
 });
+
+
+Route::fallBack(function (){
+    return "something";
+});
